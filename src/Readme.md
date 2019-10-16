@@ -1,10 +1,10 @@
-#Question A
+# Question A
 
-###Assumptions
+### Assumptions
 * Line coordinates are integers
 * Two lines overlap if they share a point e.g. (1,5) and (5,10)
 
-###Test Notes
+### Test Notes
 * Test 0
   * Covers a typical case
   * Input: (1,5) and (2,6)
@@ -26,19 +26,19 @@
   * Input: (5,1) and (8,5)
   * Expected output: Lines overlap
 
-#Question B
+# Question B
 
-###Assumptions
+### Assumptions
 * Input version numbers only contain numbers and points
 * Version number cannot be negative
 
-###Implementation Details
+### Implementation Details
 Input strings are first sanitized by removing the points. 
 The input strings are checked for length discrepancies 
 and the shorter string is padded with 0s as appropriate.
 The inputs are converted to ints and compared. 
 
-###Test Notes
+### Test Notes
 * Test 0
   * Covers a typical case for greater than
   * Input: 1.2 and 1.1
@@ -64,16 +64,16 @@ The inputs are converted to ints and compared.
   * Input: 0.0 and 0.0000
   * Expected output: 0.0 is equal to 0.0000
   
-#Question C
+# Question C
 
-###Assumptions
+### Assumptions
 * The cache stores a key-value pair (both integers)
 * The operations put(key,value) and get(key) are exposed to the user
 * Locations are represented as points on a grid (latitude, longitude)
 * Capacity and expiry time is uniform across local caches
 * Expiry time is measured in seconds
 
-###Implementation Details
+### Implementation Details
 * A LRU Cache was implemented in LRUCache.java using a hashmap and a doubly linked list.
   * The cache uses a cleanup thread to manage expiry. Each node stores a last access time,
   if the time since its last access is greater than expiry time then the node will be deleted.
@@ -84,7 +84,7 @@ The inputs are converted to ints and compared.
   * When calling get, a location needs to be supplied along with the key. The location is used to find
   the nearest cache. Should a cache fail, the next nearest cache would be automatically used. 
 
-###Test Notes
+### Test Notes
 The CacheTester creates 3 threads to represent the clients accessing the cache. Each thread is given
 a random location. Each client attempts to put 10 items into the cache, meaning only the last 4 values
 should remain at the end of the operation. The client then attempts to get the 10 values it inserted 
